@@ -3,7 +3,7 @@
 This is a concept for a speedcube timer app (as in webapp) that i intend to make "soon", it uses [scramble generating web workers from cstimer](https://github.com/cs0x7f/cstimer/tree/master/src/js)
 Note: I modified one file, removed some and added the main.js file
 ## How to use:
-If you want to use this for some reason, you can `npm install` then `npm start` or just grab all of the files in `/public` and host them.
+If you want to use this for some reason, you can `npm install` then `npm start` then open http://localhost:3000/ in your browser or just grab all of the files in `/public` and host them.
 ## TODO:
 - Add IndexedDB storage
 - Redesign some things

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+    <!-- 
+        All of the scramble generation was "borrowed"
+        from cstimer: https://www.github.com/cs0x7f/cstimer/
+        from the /src/js directory
+        I removed some unnecessary js files and added the main.js file
+        Please don't sue me @cs0x7f
+        Have a nice day
+    -->
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Cube Timer</title>
+        <!-- <script src="/js/main.js"></script> -->
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div class="main-container" v-cloak>
+            <div class="sidebar">
+                <h2 class="sidebar-title">{{ currentPuzzle }}</h2>
+                <div class="sidebar-main">
+                    <h4 class="mean" v-if="currentPuzzle && solves[currentPuzzle].arr.length > 0">Mean: {{ solves[currentPuzzle].mean }}</h4>
+                    <h4 class="mean" v-if="currentPuzzle && solves && solves[currentPuzzle].arr.length > 0">PB: {{ solves[currentPuzzle].pb }}</h4>
+                    <div class="table-container-inner">
+                        <table class="solves-table" v-if="currentPuzzle && solves[currentPuzzle].arr.length > 0">
+                            <thead>    
+                                <tr>
+                                    <th>#</th>
+                                    <th>Time</th>
+                                    <th>mo3</th>
+                                    <th>ao5</th>
+                                    <th>ao12</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr v-for="(solve, index) in solves[currentPuzzle].arr.slice().reverse()">
+                                    <td>{{ solves[currentPuzzle].arr.length - index - 1 }}</td>
+                                    <td>{{ solve.time.formatted }}</td>
+                                    <td>{{ solve.avg.mo3.formatted }}</td>
+                                    <td>{{ solve.avg.ao5.formatted }}</td>
+                                    <td>{{ solve.avg.ao12.formatted }}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="main">
+                <div class="scramble-box" v-if="scrambleLoaded" v-html="currentScramble"></div>
+                <div class="scramble-box" v-else><div style="width: 32px; height: 32px;" class="loading"></div></div>
+                <div class="timer" :class="[timerIsReady ? 'ready' : '', timerIsRunning ? 'solving': '']">
+                    <p v-if="currentTimeMillis == 0" class="time">0.00</p>
+                    <p v-else class="time">{{ currentTimeFormatted }}</p>
+                </div>
+            </div>
+            <div class="footer-nav">
+                <a class="footer-nav-item" @click="setPuzzleScramble('2x2')">2x2</a>
+                <a class="footer-nav-item" @click="setPuzzleScramble('3x3')">3x3</a>
+                <a class="footer-nav-item" @click="setPuzzleScramble('4x4')">4x4</a>
+                <a class="footer-nav-item" @click="setPuzzleScramble('5x5')">5x5</a>
+                <a class="footer-nav-item" @click="setPuzzleScramble('Skewb')">Skewb</a>
+                <a class="footer-nav-item" @click="setPuzzleScramble('Megaminx')">Megaminx</a>
+                <a class="footer-nav-item" @click="setPuzzleScramble('Spuare-1')">Square-1</a>
+                <a class="footer-nav-item" @click="setPuzzleScramble('Pyraminx')">Pyraminx</a>
+                <a class="footer-nav-item" @click="setPuzzleScramble('6x6')">6x6</a>
+                <a class="footer-nav-item" @click="setPuzzleScramble('7x7')">7x7</a>
+                <a class="footer-nav-item" @click="setPuzzleScramble('Clock')">Clock</a>
+
+            </div>
+        </div>
+        <script src="/scramble/main.js"></script>
+        <script type="module" src="vue.esm.browser.js"></script>
+        <script type="module" src="app.js"></script>
+        <script type="module" src="idb.js"></script>
+    </body>
+</html>

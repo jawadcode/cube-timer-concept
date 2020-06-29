@@ -1,0 +1,27 @@
+{
+  "name": "cube-timer-concept",
+  "version": "1.0.0",
+  "description": "A Speedcube Timer Concept",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jawadcode/cube-timer-concept.git"
+  },
+  "keywords": [
+    "Speedcubing",
+    "Rubik's",
+    "Vue.js"
+  ],
+  "author": "Jawad Ahmed",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jawadcode/cube-timer-concept/issues"
+  },
+  "homepage": "https://github.com/jawadcode/cube-timer-concept#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}

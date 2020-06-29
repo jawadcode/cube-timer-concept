@@ -1,0 +1,33 @@
+//Worker wrap for test version
+
+importScripts(
+	'lib/utillib.js',
+	'lib/mersennetwister.js',
+	'lib/mathlib.js',
+	'lib/sbtree.js',
+	'lib/lzstring.js',
+	'lib/min2phase.js',
+	'lib/cubeutil.js',
+	'lib/json.min.js',
+	'scramble/scramble.js',
+	'scramble/megascramble.js',
+	'scramble/scramble_333_edit.js',
+	'scramble/scramble_444.js',
+	'scramble/scramble_sq1_new.js',
+	'scramble/pyraminx.js',
+	'scramble/skewb.js',
+	'scramble/2x2x2.js',
+	'scramble/gearcube.js',
+	'scramble/1x3x3.js',
+	'scramble/2x2x3.js',
+	'scramble/clock.js',
+	'scramble/333lse.js',
+	'scramble/utilscramble.js',
+	'tools/tools.js',
+	'tools/cross.js',
+	'tools/eoline.js',
+	'tools/roux1.js',
+	'tools/gsolver.js',
+	'shortcut.js',
+	'worker.js'
+);

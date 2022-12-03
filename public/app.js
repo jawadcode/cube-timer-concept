@@ -254,7 +254,7 @@ new Vue({
         setPuzzleScramble (puzzle) {
             this.currentPuzzle = puzzle;
             this.scrambleLoaded = false;
-            const puzzleType = puzzle == '2x2' ? '222so' : puzzle == '3x3' ? '333' : puzzle == '4x4' ? '444wca' : puzzle == '5x5' ? '555wca' : puzzle == '6x6' ? '666wca' : puzzle == '7x7' ? '777wca' : puzzle == 'Pyraminx' ? 'pyrso' : puzzle == 'Skewb' ? 'skbso' : puzzle == 'Megaminx' ? 'mgmp' : puzzle == 'Square-1' ? 'sqrs' : puzzle == 'Clock' ? 'clkwca' : null;
+            const puzzleType = puzzle == '2x2' ? '222so' : puzzle == '3x3' ? '333' : puzzle == '4x4' ? '444wca' : puzzle == '5x5' ? '555wca' : puzzle == '6x6' ? '666wca' : puzzle == '7x7' ? '777wca' : puzzle == 'Pyraminx' ? 'pyrso' : puzzle == 'Skewb' ? 'skbso' : puzzle == 'Megaminx' ? 'mgmp' : puzzle == 'Square-1' ? 'sq1h' : puzzle == 'Clock' ? 'clkwca' : null;
             // If 5x5, 6x6 or 7x7, set correct scramble lengths accordingly
             if (puzzleType !== '555wca' && puzzleType !== 'mgmp' && puzzleType !== '666wca' && puzzleType !== '777wca') {
                 scrambleWorker.getScramble([puzzleType], scramble => {
